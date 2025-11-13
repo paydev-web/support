@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our Ministry - Reaching More Souls</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .mission-text {
+            text-align: center;
+            margin-bottom: 35px;
+            color: #333;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .account-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .account-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .bank-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .account-details {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .detail-value {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+        }
+
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            color: #666;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f9fafb;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .footer strong {
+            color: #667eea;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .detail-value {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🙏 Support Our Ministry</h1>
+            <p>Help us reach more souls and spread the Gospel</p>
+        </div>
+
+        <div class="content">
+            <div class="mission-text">
+                Your generous support enables us to continue our mission of reaching more souls with the message of hope and salvation. Every contribution makes a difference in touching lives and spreading God's love.
+            </div>
+
+            <div class="account-section">
+                <div class="bank-label">🏦 UBA Bank</div>
+                <div class="account-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Account Number</span>
+                        <span class="detail-value">
+                            <span id="uba-account">2023268027</span>
+                            <button class="copy-btn" onclick="copyToClipboard('uba-account', this)">Copy</button>
+                        </span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Account Name</span>
+                        <span class="detail-value">Henry Lucky</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Bank Name</span>
+                        <span class="detail-value">UBA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="account-section">
+                <div class="bank-label">💳 Opay</div>
+                <div class="account-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Account Number</span>
+                        <span class="detail-value">
+                            <span id="opay-account">8033867642</span>
+                            <button class="copy-btn" onclick="copyToClipboard('opay-account', this)">Copy</button>
+                        </span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Account Name</span>
+                        <span class="detail-value">Henry Lucky</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Bank Name</span>
+                        <span class="detail-value">Opay</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Thank you for your generous support!</strong><br>
+            May God bless you abundantly as you partner with us in this ministry.
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId, button) {
+            const text = document.getElementById(elementId).textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+
+        // Add subtle entrance animation to account sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.account-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+        });
+    </script>
+</body>
+</html>
